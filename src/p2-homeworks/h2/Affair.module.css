@@ -1,0 +1,28 @@
+.affair {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  font-family: fantasy;
+}
+.item {
+  width: 75px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  color: blue;
+}
+.priority {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  color: blueviolet;
+}
+.buttonX{
+  border-radius: 50px;
+  border: solid 1px black;
+  background-color: darkgrey;
+  margin-top: 5px;
+}
+.buttonX:hover{
+  background-color: hotpink;
+}
