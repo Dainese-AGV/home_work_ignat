@@ -1,62 +1,38 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from "react";
-import Greeting from "./Greeting";
-import { UserType } from "./HW3";
+import React, {useState} from 'react'
+import Greeting from './Greeting'
 
 type GreetingContainerPropsType = {
-  users: UserType[] // need to fix any
-  addUserCallback: (name: string) => void
-};
+    users: any // need to fix any
+    addUserCallback: any // need to fix any
+}
 
 // более простой и понятный для новичков
 // function GreetingContainer(props: GreetingPropsType) {
 
 // более современный и удобный для про :)
 // уровень локальной логики
-// export const GreetingContainer = (props:GreetingContainerPropsType) => {
-    
- export const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users ,addUserCallback}) => { 
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
+    const [name, setName] = useState<any>('') // need to fix any
+    const [error, setError] = useState<any>('') // need to fix any
 
-  // деструктуризация пропсов
-  const [name, setName] = useState<string>(''); // need to fix any
-  const [error, setError] = useState<string>(""); // need to fix any
-
-  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    const trimmedName = e.currentTarget.value.trim();
-
-    if (trimmedName) {
-      setName(trimmedName);
-      setError("");
-    } else {
-      setName('');
-      setError("name is require");
+    const setNameCallback = (e: any) => { // need to fix any
+        setName('') // need to fix
     }
-  }
     const addUser = () => {
-      addUserCallback(name);
-      alert(`Hello ${name} ! `);
-      setName('') // need to fix
-    };
+        alert(`Hello  !`) // need to fix
+    }
 
-    const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === "13" && name) {
-        addUser();
-        setName("");
-      }
-    };
-
-
-    const totalUsers = users.length; // need to fix
+    const totalUsers = 0 // need to fix
 
     return (
-        
-     <Greeting
-        name={name}
-        setNameCallback={setNameCallback}
-        addUser={addUser}
-        error={error}
-        totalUsers={totalUsers}
-        onEnter={onEnter}
-      /> 
-    );
-    
-};
+        <Greeting
+            name={name}
+            setNameCallback={setNameCallback}
+            addUser={addUser}
+            error={error}
+            totalUsers={totalUsers}
+        />
+    )
+}
+
+export default GreetingContainer
